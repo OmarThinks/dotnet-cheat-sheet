@@ -87,7 +87,7 @@ dotnet watch run
 ```
 </b>
 
-
+To escape wtaching a project, just use **`ctrl`** + **`c`**.
 
 
 
