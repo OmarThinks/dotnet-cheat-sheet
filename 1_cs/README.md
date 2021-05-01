@@ -97,7 +97,7 @@ To escape wtaching a project, just use **`ctrl`** + **`c`**.
 
 <b>
 
-```c#
+```csharp
 using System;
 
 namespace hello_world

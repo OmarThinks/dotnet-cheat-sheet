@@ -38,6 +38,42 @@ dotnet new webapp --output "1_hello_app" --name  "hello_app"
 
 
 
+# 2) Create a model:
+
+1. Create a new folder called **`Models`**
+2. Inside of it, create a new file called **`Movie.cs`**
+3. Paste this code insde of it
+
+<b>
+
+```csharp
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace RazorPagesMovie.Models
+{
+    public class Movie
+    {
+        public int ID { get; set; }
+        public string Title { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime ReleaseDate { get; set; }
+        public string Genre { get; set; }
+        public decimal Price { get; set; }
+    }
+}
+```
+</b>
+
+
+
+
+
+
+
+
+
 
 
 

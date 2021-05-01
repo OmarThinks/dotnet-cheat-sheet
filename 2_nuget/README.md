@@ -41,7 +41,7 @@ you should find these lines:
 
 <b>
 
-```c#
+```csharp
 using Humanizer;
 ```
 Now you can use all the functions in this package.
