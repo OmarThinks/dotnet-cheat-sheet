@@ -127,6 +127,22 @@ dotnet aspnet-codegenerator razorpage --model Movie --dataContext AppDataContext
 </b>
 
 
+- **`--model`**
+	- The moidel that will be relted to the pages
+	- Here we used the model **`Movie`** that we have just created
+- **`--dataContext`**
+	- The database
+	- here we have created a database called **`AppDataContext`**
+- **`-outDir`**
+	- This code created a folder called **`Movies`** inside the pages directory
+- **`-udl`**
+	- Use Default Layout
+	- If do not specify a layout, it will be plain HTML
+	- Default layout is a Bootstrap layout
+- **`-scripts`**
+	- To use JavaScript
+
+
 
 # 5) See the project Live:
 
