@@ -62,10 +62,14 @@ Get a list of packages that need to be updated
 
 
 
+# 3) Uninstalling a package:
+<b>
 
+```bash
+dotnet remove package Humanizer
+```
 
-
-
+</b>
 
 
 
