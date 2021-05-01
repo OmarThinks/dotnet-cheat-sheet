@@ -93,12 +93,36 @@ dotnet watch run
 
 
 
+# 4) Syntax:
+
+<b>
+
+```c#
+using System;
+
+namespace hello_world
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+</b>
+
+The sytax of the C# languag are very cloe to the syntax 
+of the Java Language.
 
 
 
 
 
+# 5) More:
 
+For more documentation, please check out out the w3schools.com documentation of the C# programming language.
 
 
 
