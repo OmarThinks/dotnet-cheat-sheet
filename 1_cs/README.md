@@ -2,7 +2,17 @@
 
 
 
-# 1) Creating a new project:
+
+# 1) About:
+**C-Sharp**.  
+Maintained by Micrsoft.  
+Used for several applications, like web apps, AI and 3D.  
+Here we will talk about web applications only.
+
+
+
+
+# 2) Creating a new project:
 
 
 <b>
@@ -50,7 +60,7 @@ hello_world
 
 
 
-# 2) Run the project:
+# 3) Run the project:
 
 
 
