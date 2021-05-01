@@ -144,6 +144,16 @@ dotnet aspnet-codegenerator razorpage --model Movie --dataContext AppDataContext
 
 
 
+- Files **Updated**:
+	- **` appsettings.json`**
+		- String to connect to the local database
+- Files **Created**:
+	- **`Pages/Movies:`**
+		- Create, update, delete and list files
+	- **`Data/AppDataContext.cs`**
+		- Updated the database
+
+
 # 5) See the project Live:
 
 
