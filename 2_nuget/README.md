@@ -35,8 +35,21 @@ you should find these lines:
 
 
 
+# 3) Using Installed Packages:
 
-# 3) Listing installed packages:
+
+
+<b>
+
+```c#
+using Humanizer;
+```
+Now you can use all the functions in this package.
+
+</b>
+
+
+# 4) Listing installed packages:
 
 <b>
 
@@ -62,7 +75,7 @@ Get a list of packages that need to be updated
 
 
 
-# 3) Uninstalling a package:
+# 5) Uninstalling a package:
 <b>
 
 ```bash
