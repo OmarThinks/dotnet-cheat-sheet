@@ -36,8 +36,17 @@ dotnet new webapp --output "1_hello_app" --name  "hello_app"
 
 
 
+---
 
+This command will tell bash to trust the self signed
+ certificate:
 
+<b>
+
+```bash
+dotnet dev-certs https --trust
+```
+</b>
 # 2) Create a model:
 
 1. Create a new folder called **`Models`**
