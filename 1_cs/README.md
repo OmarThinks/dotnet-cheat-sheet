@@ -113,7 +113,7 @@ namespace hello_world
 ```
 </b>
 
-The sytax of the C# languag are very cloe to the syntax 
+The syntax of the C# languag are very cloe to the syntax 
 of the Java Language.
 
 
