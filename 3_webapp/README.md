@@ -74,12 +74,39 @@ namespace RazorPagesMovie.Models
 
 
 
-# 3) Code Generation (Scaffolding) :
+# 3) Code Generation (Scaffolding) Requirements :
 Before we can apply scaffolding, we need to install some packages:
 
+<b>
 
+```bash
+dotnet tool install -g dotnet-aspnet-codegenerator
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 ```
+</b>
+
+
+
+Do not forget to double check the **`hello_app.csproj`** file,
+you should see these codes:
+
+<b>
+
+```xml
+<ItemGroup>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		<PrivateAssets>all</PrivateAssets>
+	</PackageReference>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
+	<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+</ItemGroup>
 ```
+</b>
+
+Now we are ready to start code generation.
 
 
 
@@ -87,5 +114,31 @@ Before we can apply scaffolding, we need to install some packages:
 
 
 
+# 4) Code Generation (Scaffolding) :
 
+We want to create web pages of the Movie model inside the 
+pages folder, so we do it like this:
+
+<b>
+
+```bash
+dotnet aspnet-codegenerator razorpage --model Movie --dataContext AppDataContext -outDir Pages/Movies -udl -scripts
+```
+</b>
+
+
+
+# 5) See the project Live:
+
+
+<b>
+	
+
+```bash
+dotnet watch run
+```
+</b>
+
+
+You
 
