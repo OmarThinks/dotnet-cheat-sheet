@@ -74,6 +74,15 @@ namespace RazorPagesMovie.Models
 
 
 
+# 3) Code Generation (Scaffolding) :
+Before we can apply scaffolding, we need to install some packages:
+
+
+```
+```
+
+
+
 
 
 

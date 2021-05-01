@@ -88,3 +88,30 @@ dotnet remove package Humanizer
 
 
 
+
+# 6) Installing a package globally:
+
+<b>
+
+```bash
+dotnet tool install -g dotnet-aspnet-codegenerator
+```
+</b>
+
+
+
+
+
+
+# 6) Lising isntalled global packages:
+
+<b>
+
+```bash
+dotnet tool list -g
+```
+</b>
+
+
+
+
