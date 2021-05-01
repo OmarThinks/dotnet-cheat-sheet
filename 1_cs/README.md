@@ -53,30 +53,25 @@ hello_world
 # 2) Run the project:
 
 
-## 2-1) Just run the project:
 
 <b>
 
+Just run the project:
 ```bash
 dotnet run
 ```
-</b>
 
-## 2-2) Specify which project to run:
+---
 
-<b>
+Specify which project to run:
 
 ```bash
 dotnet run --project "hello_world.csproj"
 ```
-</b>
 
+---
 
-
-## 2-3) Running the project while watching changes:
-
-<b>
-
+Running the project while watching changes:
 ```bash
 dotnet watch run
 ```
