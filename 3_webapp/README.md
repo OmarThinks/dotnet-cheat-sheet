@@ -181,3 +181,44 @@ Check these links:
 https://localhost:5001/Movies/create**
 
 
+
+
+
+# 6) Install Entity Framework Globally:
+
+<b>
+
+```bash
+dotnet tool install --global dotnet-ef
+```
+</b>
+
+To make sure that the package has been successfull 
+installed globally, type thsi command:
+
+
+<b>
+
+```bash
+dotnet ef --help
+```
+</b>
+
+You should see now list of ef commands.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
