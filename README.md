@@ -33,7 +33,9 @@ How to create we applications, Without using RESTful APIs.
 4) Understading Scaffolding</a>
 </h1>
 Here we will understand whet happened when we 
-scaffolded the pages.
+scaffolded the pages.  
+This is a very important lesson to help us know 
+exactly what is happening in code.
 
 
 
