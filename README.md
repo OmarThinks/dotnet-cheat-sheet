@@ -28,3 +28,12 @@ How to create we applications, Without using RESTful APIs.
 
 
 
+<h1>
+<a href="4_understading_scaffolding/README.md">
+4) Understading Scaffolding</a>
+</h1>
+Here we will understand whet happened when we 
+scaffolded the pages.
+
+
+
