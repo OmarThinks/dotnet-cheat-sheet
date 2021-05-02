@@ -30,10 +30,17 @@ So, we will use this command to create the application:
 <b>
 
 ```bash
-dotnet new webapp --output "1_hello_app" --name  "hello_app"
+dotnet new webapp --output "1_hello_app" --name "hello_app"
 ```
 </b>
 
+
+---
+
+Change directory to the application directory.
+```bash
+cd 1_hello_app
+```
 
 
 ---
