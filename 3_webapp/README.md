@@ -211,7 +211,51 @@ You should see now list of ef commands.
 
 
 
+# 7) Migrating:
 
+<b>
+
+```bash
+dotnet ef migrations add InitialCreate
+```
+</b>
+This will prepare the files for migrating the databse.
+
+---
+
+Files changed:
+
+Now you can see a migrations folder created, 
+and the migrations, are in it.
+
+---
+
+<b>
+
+```bash
+dotnet ef migrations list
+```
+</b>
+
+To see a list of migrations until now.
+
+The result should look like this:
+
+```
+20210502002257_InitialCreate (Pending)
+```
+
+
+
+--- 
+To perform the migrations:
+
+<b>
+
+```bash
+dotnet ef database update
+```
+</b>
 
 
 
