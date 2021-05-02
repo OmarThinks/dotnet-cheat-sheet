@@ -261,8 +261,27 @@ dotnet ef database update
 
 
 
+# 8) Finally: Testing the Application:
 
 
+<b>
 
+```bash
+dotnet watch run
+```
+</b>
+
+
+Test these links:
+
+<b>
+
+https://localhost:5001/  
+https://localhost:5001/Movies  
+https://localhost:5001/Movies/create    
+
+</b>
+Try adding, deleting and editing the database 
+from the frontend.
 
 
