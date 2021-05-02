@@ -175,5 +175,9 @@ dotnet watch run
 </b>
 
 
-You
+Check these links:
+
+**https://localhost:5001  
+https://localhost:5001/Movies/create**
+
 
