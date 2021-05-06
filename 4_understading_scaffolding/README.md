@@ -112,7 +112,8 @@ Pages/Movies/Index.cshtml
 
 # 2) Generated files:
 
-These files are generated inside the *`Pages/Movies`* Directory.
+These files are generated inside 
+the **`Pages/Movies`** Directory.
 
 
 <b>
@@ -151,10 +152,29 @@ These files are generated inside the *`Pages/Movies`* Directory.
 
 
 
+# 3) Models Naming:
+
+**`<PageName>Model`**
+
+
+<b>
+
+- `IndexModel`
+- `CreateModel`
+- `DetailsModel`
+- `EditModel`
+- `DeleteModel`
+
+</b>
 
 
 
 
+
+
+
+
+# 4) Handling Requests:
 
 
 
