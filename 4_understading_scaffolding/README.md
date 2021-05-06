@@ -177,12 +177,46 @@ the **`Pages/Movies`** Directory.
 # 4) Handling Requests:
 
 
+## 4-1) Request Method:
+
+
+
+To handle `get` request you can use any of the following:
+- **`OnGet`**
+- **`OnGetAsync`**
+
+The same thing with post method.  
+The difference is that, Async will need to delay, for example:
+- Getting data from database
+- Sending Https Request to third party
 
 
 
 
+## 4-2) Return Value:
 
-
-
+<table>
+	<tr>
+		<th>Method</th>
+		<th>Return Type</th>
+		<th>Required return</th>
+	</tr>
+	<tr>
+		<td>OnGet</td>
+		<td>void</td>
+		<td>No Return statement</td>
+	</tr>
+	<tr>
+		<td>OnGetAsync</td>
+		<td>Task</td>
+		<td>No Return statement</td>
+	</tr>
+	<tr>
+		<td>Any</td>
+		<td>IActionResult or 
+		Task&#60;IActionResult&#62;</td>
+		<td>Required return</td>
+	</tr>
+</table>
 
 
