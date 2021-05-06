@@ -110,7 +110,44 @@ Pages/Movies/Index.cshtml
 
 
 
+# 2) Generated files:
 
+These files are generated inside the *`Pages/Movies`* Directory.
+
+
+<b>
+
+1. Index.cshtml
+2. Index.cshtml.cs
+	- This shows a list of records
+	- https://localhost:5001/Movies 
+
+3. Create.cshtml
+4. Create.cshtml.cs
+	- This Creates a new record
+	- https://localhost:5001/Movies/Create 
+
+
+5. Details.cshtml
+6. Details.cshtml.cs
+	- This shows details of a single record
+	- https://localhost:5001/Movies/Details?id=1 
+
+
+7. Edit.cshtml
+8. Edit.cshtml.cs
+	- This edits a single record
+	- https://localhost:5001/Movies/Edit?id=1 
+
+
+9. Delete.cshtml
+10. Delete.cshtml.cs
+	- This deletes a single record
+	- https://localhost:5001/Movies/Delete?id=1 
+
+
+
+</b>
 
 
 
