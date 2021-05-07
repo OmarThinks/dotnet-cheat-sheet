@@ -1,11 +1,13 @@
-# dotnet-cheat-sheet
+# dotnet-cli-cheat-sheet
 
 
-To save time.  
-Every thing you may need is in the documentation.  
-Here I will concentrate on things that are hard to 
-find in the documentation.  
-Especially, code generation without VSCode.  
+Every thing you may need about dotnet, you can find 
+it in the documentation.  
+The problem is that documentation relies heavily 
+on Visual Studio Code.   
+VSCode is very slow, This reduces the performance.  
+Here we I will do my best to create a 
+documentation on the relies on CLI, instead of VSCode. 
 
 
 
