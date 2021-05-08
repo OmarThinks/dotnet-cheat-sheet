@@ -217,7 +217,7 @@ namespace MvcMovie.Models
 
 
 
-# 7) Creating Controllers (Scaffolding) :
+# 7) Creating Controllers With Views (Scaffolding) :
 
 We want to create controllers of the Movie model inside the 
 Controllers folder, so we do it like this:
