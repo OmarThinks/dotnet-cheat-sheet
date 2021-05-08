@@ -11,7 +11,7 @@ dotnet new webapp
 ```
 </b>
 
-This has a list of parameters that can be used with it:
+This has a list of important parameters that can be used with it:
 
 
 - **`--output`**:
