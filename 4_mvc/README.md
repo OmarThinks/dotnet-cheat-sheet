@@ -177,6 +177,33 @@ dotnet aspnet-codegenerator view Index Empty -outDir Views/HelloWorld -udl -scri
 
 
 
+# 6) Create a model:
+
+1. Create a new folder called **`Models`**
+2. Inside of it, create a new file called **`Movie.cs`**
+3. Paste this code insde of it
+
+<b>
+
+```csharp
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace MvcMovie.Models
+{
+    public class Movie
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+
+        [DataType(DataType.Date)]
+        public DateTime ReleaseDate { get; set; }
+        public string Genre { get; set; }
+        public decimal Price { get; set; }
+    }
+}
+```
+</b>
 
 
 
@@ -187,7 +214,112 @@ dotnet aspnet-codegenerator view Index Empty -outDir Views/HelloWorld -udl -scri
 
 
 
-# 5) Install Entity Framework Globally:
+
+
+
+# 7) Creating Controllers (Scaffolding) :
+
+We want to create controllers of the Movie model inside the 
+Controllers folder, so we do it like this:
+
+<b>
+
+```bash
+dotnet aspnet-codegenerator controller --controllerName MovieController -outDir Controllers --model Movie --dataContext MvcMovieContext -udl -scripts
+```
+</b>
+
+
+
+Generated files:
+
+
+
+```
+Added DbContext : '\Data\MvcMovieContext.cs'
+Added Controller : '\Controllers\MovieController.cs'.
+Added View : \Views\Movie\Create.cshtml
+Added View : \Views\Movie\Edit.cshtml
+Added View : \Views\Movie\Details.cshtml
+Added View : \Views\Movie\Delete.cshtml
+Added View : \Views\Movie\Index.cshtml
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 7) Install Entity Framework Globally:
 
 <b>
 
@@ -214,7 +346,7 @@ You should see now list of ef commands.
 
 
 
-# 6) Migrating:
+# 8) Migrating:
 
 <b>
 
@@ -264,7 +396,7 @@ dotnet ef database update
 
 
 
-# 7) Finally: Testing the Application:
+# 9) Finally: Testing the Application:
 
 
 <b>
