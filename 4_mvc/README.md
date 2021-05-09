@@ -225,7 +225,7 @@ Controllers folder, so we do it like this:
 <b>
 
 ```bash
-dotnet aspnet-codegenerator controller --controllerName MovieController -outDir Controllers --model Movie --dataContext MvcMovieContext -udl -scripts
+dotnet aspnet-codegenerator controller --controllerName MoviesController -outDir Controllers --model Movie --dataContext MvcMovieContext -udl -scripts
 ```
 </b>
 
