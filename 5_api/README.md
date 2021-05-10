@@ -30,7 +30,7 @@ So, we will use this command to create the application:
 <b>
 
 ```bash
-dotnet new webapi --output "1_ToDo" --name "ToDo"
+dotnet new webapi --output "1_TodoApi" --name "TodoApi"
 ```
 </b>
 
@@ -39,7 +39,7 @@ dotnet new webapi --output "1_ToDo" --name "ToDo"
 
 Change directory to the application directory.
 ```bash
-cd 1_ToDo
+cd 1_TodoApi
 ```
 
 
@@ -150,29 +150,23 @@ dotnet watch run
 
 
 
+
 # 2) Create a model:
 
 1. Create a new folder called **`Models`**
-2. Inside of it, create a new file called **`Movie.cs`**
+2. Inside of it, create a new file called **`TodoItem.cs`**
 3. Paste this code insde of it
 
 <b>
 
 ```csharp
-using System;
-using System.ComponentModel.DataAnnotations;
-
-namespace RazorPagesMovie.Models
+namespace TodoApi.Models
 {
-    public class Movie
+    public class TodoItem
     {
-        public int ID { get; set; }
-        public string Title { get; set; }
-
-        [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
-        public string Genre { get; set; }
-        public decimal Price { get; set; }
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public bool IsComplete { get; set; }
     }
 }
 ```
@@ -201,7 +195,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
 
 
-Do not forget to double check the **`hello_app.csproj`** file,
+Do not forget to double check the **`TodoApi.csproj`** file,
 you should see these codes:
 
 <b>
@@ -226,7 +220,7 @@ Now we are ready to start code generation.
 
 
 
-# 4) Code Generation (Scaffolding) :
+# 4) Generating a controller (Scaffolding) :
 
 We want to create web pages of the Movie model inside the 
 pages folder, so we do it like this:
@@ -234,54 +228,13 @@ pages folder, so we do it like this:
 <b>
 
 ```bash
-dotnet aspnet-codegenerator razorpage --model Movie --dataContext AppDataContext -outDir Pages/Movies -udl -scripts
+dotnet aspnet-codegenerator controller --controllerName TodoItemsController --model TodoItem --dataContext TodoContext  -outDir Controllers/api --restWithNoViews
 ```
 </b>
 
 
-- **`--model`**
-    - The moidel that will be relted to the pages
-    - Here we used the model **`Movie`** that we have just created
-- **`--dataContext`**
-    - The database
-    - here we have created a database called **`AppDataContext`**
-- **`-outDir`**
-    - This code created a folder called **`Movies`** inside the pages directory
-- **`-udl`**
-    - Use Default Layout
-    - If do not specify a layout, it will be plain HTML
-    - Default layout is a Bootstrap layout
-- **`-scripts`**
-    - To use JavaScript
 
 
-
-- Files **Updated**:
-    - **` appsettings.json`**
-        - String to connect to the local database
-- Files **Created**:
-    - **`Pages/Movies:`**
-        - Create, update, delete and list files
-    - **`Data/AppDataContext.cs`**
-        - Updated the database
-
-
-# 5) See the project Live:
-
-
-<b>
-    
-
-```bash
-dotnet watch run
-```
-</b>
-
-
-Check these links:
-
-**https://localhost:5001  
-https://localhost:5001/Movies/create**
 
 
 
@@ -374,18 +327,6 @@ dotnet watch run
 ```
 </b>
 
-
-Test these links:
-
-<b>
-
-https://localhost:5001/  
-https://localhost:5001/Movies  
-https://localhost:5001/Movies/create    
-
-</b>
-Try adding, deleting and editing the database 
-from the frontend.
 
 
 
