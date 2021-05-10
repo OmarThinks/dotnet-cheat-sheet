@@ -7,7 +7,7 @@
 <b>
 
 ```bash
-dotnet new mvc
+dotnet new webapi
 ```
 </b>
 
@@ -30,7 +30,7 @@ So, we will use this command to create the application:
 <b>
 
 ```bash
-dotnet new mvc --output "2_MvcMovie" --name "MvcMovie"
+dotnet new webapi --output "1_ToDo" --name "ToDo"
 ```
 </b>
 
@@ -39,7 +39,7 @@ dotnet new mvc --output "2_MvcMovie" --name "MvcMovie"
 
 Change directory to the application directory.
 ```bash
-cd 2_MvcMovie
+cd 1_ToDo
 ```
 
 
@@ -88,7 +88,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
 
 
-Do not forget to double check the **`hello_app.csproj`** file,
+Do not forget to double check the **`ToDo.csproj`** file,
 you should see these codes:
 
 <b>
@@ -106,6 +106,53 @@ you should see these codes:
 </b>
 
 Now we are ready to start code generation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -88,7 +88,7 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 
 
 
-Do not forget to double check the **`hello_app.csproj`** file,
+Do not forget to double check the **`MvcMovie.csproj`** file,
 you should see these codes:
 
 <b>
