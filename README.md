@@ -66,4 +66,18 @@ Creating API application using CLI
 
 
 
+<h1>
+<a href="6_auth/README.md">
+6) Auth</a>
+</h1>
+Authentication and Authorization
+
+
+
+
+
+
+
+
+
 
