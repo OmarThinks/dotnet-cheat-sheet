@@ -1,36 +1,14 @@
-# 4) MVC
+# 6) Auth
 
 
 
 # 1) Create the application:
 
-<b>
-
-```bash
-dotnet new webapi
-```
-</b>
-
-This has a list of important parameters that can be used with it:
-
-
-- **`--output`**:
-    - Specify the location to put the project
-- **`--name`**:
-    - The name of the project
-- **`--auth`**:
-    - The Authentication system of the project
-- **`--no-https`**:
-    - To create the project without https
-
-So, we will use this command to create the application:
-
-
 
 <b>
 
 ```bash
-dotnet new webapi --output "1_TodoApi" --name "TodoApi"
+dotnet new webapp --output "WebApp1" --name "WebApp1" --auth Individual
 ```
 </b>
 
@@ -39,7 +17,7 @@ dotnet new webapi --output "1_TodoApi" --name "TodoApi"
 
 Change directory to the application directory.
 ```bash
-cd 1_TodoApi
+cd WebApp1
 ```
 
 
@@ -113,19 +91,10 @@ Now we are ready to start code generation.
 
 
 
-# 3) Update the launchUrl :
 
 
-In **`Properties\launchSettings.json`**, update 
-**`launchUrl`** from **`swagger`** to **`api/TodoItems`**:
 
 
-<b>
-
-```json
-"launchUrl": "api/TodoItems"
-```
-</b>
 
 
 
@@ -141,6 +110,60 @@ In **`Properties\launchSettings.json`**, update
 dotnet watch run
 ```
 </b>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
