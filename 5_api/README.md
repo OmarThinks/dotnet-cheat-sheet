@@ -151,7 +151,7 @@ dotnet watch run
 
 
 
-# 2) Create a model:
+# 5) Create a model:
 
 1. Create a new folder called **`Models`**
 2. Inside of it, create a new file called **`TodoItem.cs`**
@@ -180,7 +180,7 @@ namespace TodoApi.Models
 
 
 
-# 3) Code Generation (Scaffolding) Requirements :
+# 6) Code Generation (Scaffolding) Requirements :
 Before we can apply scaffolding, we need to install some packages:
 
 <b>
@@ -220,7 +220,7 @@ Now we are ready to start code generation.
 
 
 
-# 4) Generating a controller (Scaffolding) :
+# 7) Generating a controller (Scaffolding) :
 
 We want to create web pages of the Movie model inside the 
 pages folder, so we do it like this:
@@ -240,7 +240,7 @@ dotnet aspnet-codegenerator controller --controllerName TodoItemsController --mo
 
 
 
-# 6) Install Entity Framework Globally:
+# 8) Install Entity Framework Globally:
 
 <b>
 
@@ -267,7 +267,7 @@ You should see now list of ef commands.
 
 
 
-# 7) Migrating:
+# 9) Migrating:
 
 <b>
 
@@ -317,7 +317,7 @@ dotnet ef database update
 
 
 
-# 8) Finally: Testing the Application:
+# 10) Finally: Testing the Application:
 
 
 <b>

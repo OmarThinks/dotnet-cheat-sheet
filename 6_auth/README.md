@@ -36,171 +36,6 @@ dotnet dev-certs https --trust
 
 
 
-<b>
-    
-
-```bash
-dotnet watch run
-```
-</b>
-
-
-
-
-
-
-
-
-# 2) Code Generation (Scaffolding) Requirements :
-Before we can apply scaffolding, we need to install some packages:
-
-<b>
-
-```bash
-dotnet tool install -g dotnet-aspnet-codegenerator
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-dotnet add package Microsoft.EntityFrameworkCore.Design
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-```
-</b>
-
-
-
-Do not forget to double check the **`ToDo.csproj`** file,
-you should see these codes:
-
-<b>
-
-```xml
-<ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
-</ItemGroup>
-```
-</b>
-
-Now we are ready to start code generation.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 4) See the project Live:
-
-
-<b>
-    
-
-```bash
-dotnet watch run
-```
-</b>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 2) Create a model:
-
-1. Create a new folder called **`Models`**
-2. Inside of it, create a new file called **`TodoItem.cs`**
-3. Paste this code insde of it
-
-<b>
-
-```csharp
-namespace TodoApi.Models
-{
-    public class TodoItem
-    {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public bool IsComplete { get; set; }
-    }
-}
-```
-</b>
-
-
-
-
-
-
-
 
 
 # 3) Code Generation (Scaffolding) Requirements :
@@ -212,58 +47,20 @@ Before we can apply scaffolding, we need to install some packages:
 dotnet tool install -g dotnet-aspnet-codegenerator
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
 dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
+dotnet add package Microsoft.AspNetCore.Identity.UI
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
 ```
 </b>
 
-
-
-Do not forget to double check the **`TodoApi.csproj`** file,
-you should see these codes:
-
-<b>
-
-```xml
-<ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
-</ItemGroup>
-```
-</b>
 
 Now we are ready to start code generation.
 
 
 
 
-
-
-
-# 4) Generating a controller (Scaffolding) :
-
-We want to create web pages of the Movie model inside the 
-pages folder, so we do it like this:
-
-<b>
-
-```bash
-dotnet aspnet-codegenerator controller --controllerName TodoItemsController --model TodoItem --dataContext TodoContext  -outDir Controllers/api --restWithNoViews
-```
-</b>
-
-
-
-
-
-
-
-
-
-# 6) Install Entity Framework Globally:
+# 4) Install Entity Framework Globally:
 
 <b>
 
@@ -276,65 +73,55 @@ To make sure that the package has been successfull
 installed globally, type thsi command:
 
 
-<b>
-
-```bash
-dotnet ef --help
-```
-</b>
-
-You should see now list of ef commands.
 
 
 
 
 
 
-# 7) Migrating:
+# 4) Generating (Scaffolding) Identity pages :
+
 
 <b>
 
 ```bash
-dotnet ef migrations add InitialCreate
+dotnet aspnet-codegenerator identity
 ```
 </b>
-This will prepare the files for migrating the databse.
 
----
+Delete these these:
 
-Files changed:
+**Areas/Identity/Data**  
+**Areas/Identity/IdentityHostingStartup.cs**
 
-Now you can see a migrations folder created, 
-and the migrations, are in it.
 
----
+
+
+
+
+
+# 5) Not Requiring email Confirmation :
+
+In **`Startup.cs`**
 
 <b>
 
-```bash
-dotnet ef migrations list
+```cs
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDefaultIdentity<IdentityUser>(options => {
+                options.SignIn.RequireConfirmedAccount = false;
+            }
+        )
+        .AddEntityFrameworkStores<ApplicationDbContext>();
+}
 ```
 </b>
 
-To see a list of migrations until now.
-
-The result should look like this:
-
-```
-20210502002257_InitialCreate (Pending)
-```
 
 
 
---- 
-To perform the migrations:
 
-<b>
-
-```bash
-dotnet ef database update
-```
-</b>
 
 
 
