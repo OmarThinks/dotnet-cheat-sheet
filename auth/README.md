@@ -1,4 +1,4 @@
-# 6) Auth
+# 3) Auth
 
 
 
@@ -177,13 +177,26 @@ public void ConfigureServices(IServiceCollection services)
 
 
 
+# 5) Migrate:
+
+
+<b>
+
+```bash
+dotnet ef migrations add AuthReady
+dotnet ef migrations list
+dotnet ef database update 
+```
+</b>
 
 
 
 
 
 
-# 5) Generating (Scaffolding) Identity pages :
+
+
+# 6) Generating (Scaffolding) Identity pages :
 
 
 <b>
@@ -215,7 +228,7 @@ Delete these these:
 
 
 
-# 6) Finally: Testing the Application:
+# 7) Finally: Testing the Application:
 
 
 <b>

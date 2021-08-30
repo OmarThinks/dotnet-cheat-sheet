@@ -14,7 +14,7 @@ documentation on the relies on CLI, instead of VSCode.
 
 
 <h1>
-<a href="1_cs/README.md">1) C#</a>
+<a href="cs/README.md">1) C#</a>
 </h1>
 
 This is the programming language used in the development of 
@@ -25,15 +25,36 @@ ASP.NET Applications.
 
 
 <h1>
-<a href="2_nuget/README.md">2) NuGet</a>
+<a href="nuget/README.md">2) NuGet</a>
 </h1>
 How to install and use packages.
 
 
 
 
+
+
+
+
+
 <h1>
-<a href="3_webapp/README.md">3) Web App</a>
+<a href="auth/README.md">
+3) Auth</a>
+</h1>
+Authentication and Authorization
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+<a href="webapp/README.md">4) Web App</a>
 </h1>
 How to create we applications, Without using RESTful APIs.
 
@@ -41,8 +62,8 @@ How to create we applications, Without using RESTful APIs.
 
 
 <h1>
-<a href="4_mvc/README.md">
-4) MVC</a>
+<a href="mvc/README.md">
+5) MVC</a>
 </h1>
 Creating MVC application using CLI
 
@@ -53,24 +74,13 @@ Creating MVC application using CLI
 
 
 <h1>
-<a href="5_api/README.md">
-5) API</a>
+<a href="api/README.md">
+6) API</a>
 </h1>
 Creating API application using CLI
 
 
 
-
-
-
-
-
-
-<h1>
-<a href="6_auth/README.md">
-6) Auth</a>
-</h1>
-Authentication and Authorization
 
 
 
