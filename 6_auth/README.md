@@ -1,8 +1,13 @@
 # 6) Auth
 
+# Best Practice
+# 1) Create the application then Create Identity:
 
 
-# 1) Create the application:
+
+
+# Forbidden
+# 2) Create the application with Identity:
 
 
 <b>
@@ -11,6 +16,21 @@
 dotnet new webapp --output "WebApp1" --name "WebApp1" --auth Individual
 ```
 </b>
+
+**Do not do that.  
+This will create a SQLite databse.  
+The SQLite Database can not have relationships inside ASP.NET.  
+You need to connect with a Microsoft database.**
+
+
+You need to do it like this:
+
+<b>
+```bash
+dotnet new webapp --output "WebApp1" --name "WebApp1" --auth Individual --use-local-db
+```
+</b>
+This means that you will not be using SQLite.
 
 
 ---
