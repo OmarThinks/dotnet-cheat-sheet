@@ -1,119 +1,15 @@
-# 4) MVC
-
-
-
-# 1) Create the application:
-
-<b>
-
-```bash
-dotnet new mvc
-```
-</b>
-
-This has a list of important parameters that can be used with it:
-
-
-- **`--output`**:
-    - Specify the location to put the project
-- **`--name`**:
-    - The name of the project
-- **`--auth`**:
-    - The Authentication system of the project
-- **`--no-https`**:
-    - To create the project without https
-
-So, we will use this command to create the application:
-
-
-
-<b>
-
-```bash
-dotnet new mvc --output "2_MvcMovie" --name "MvcMovie"
-```
-</b>
-
-
----
-
-Change directory to the application directory.
-```bash
-cd 2_MvcMovie
-```
-
-
----
-
-This command will tell bash to trust the self signed
- certificate:
-
-<b>
-
-```bash
-dotnet dev-certs https --trust
-```
-</b>
-
-
-
-
-<b>
-    
-
-```bash
-dotnet watch run
-```
-</b>
+# 5) MVC
 
 
 
 
 
-
-
-
-# 2) Code Generation (Scaffolding) Requirements :
-Before we can apply scaffolding, we need to install some packages:
-
-<b>
-
-```bash
-dotnet tool install -g dotnet-aspnet-codegenerator
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-dotnet add package Microsoft.EntityFrameworkCore.Design
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-```
-</b>
-
-
-
-Do not forget to double check the **`MvcMovie.csproj`** file,
-you should see these codes:
-
-<b>
-
-```xml
-<ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
-</ItemGroup>
-```
-</b>
-
-Now we are ready to start code generation.
+Go to Auth, Continue until Step 7, them come back to me. :)
 
 
 
 
-
-
-
-# 3) Generating an Empty Controller :
+# 8) Generating an Empty Controller :
 
 
 <b>
@@ -133,7 +29,7 @@ dotnet aspnet-codegenerator controller --controllerName HelloWorldController -ou
 
 
 
-# 4) See the project Live:
+# 9) See the project Live:
 
 
 <b>
@@ -160,7 +56,7 @@ https://localhost:5001/Movies/create**
 
 
 
-# 5) Generating an Empty Razor View :
+# 10) Generating an Empty Razor View :
 
 
 
@@ -177,7 +73,7 @@ dotnet aspnet-codegenerator view Index Empty -outDir Views/HelloWorld -udl -scri
 
 
 
-# 6) Create a model:
+# 11) Create a model:
 
 1. Create a new folder called **`Models`**
 2. Inside of it, create a new file called **`Movie.cs`**
@@ -193,7 +89,7 @@ namespace MvcMovie.Models
 {
     public class Movie
     {
-        public int Id { get; set; }
+        public int MovieID { get; set; }
         public string Title { get; set; }
 
         [DataType(DataType.Date)]
@@ -217,7 +113,7 @@ namespace MvcMovie.Models
 
 
 
-# 7) Creating Controllers With Views (Scaffolding) :
+# 12) Creating Controllers With Views (Scaffolding) :
 
 We want to create controllers of the Movie model inside the 
 Controllers folder, so we do it like this:
@@ -225,7 +121,9 @@ Controllers folder, so we do it like this:
 <b>
 
 ```bash
-dotnet aspnet-codegenerator controller --controllerName MoviesController -outDir Controllers --model Movie --dataContext MvcMovieContext -udl -scripts
+dotnet ef dbcontext list
+
+dotnet aspnet-codegenerator controller --controllerName MoviesController -outDir Controllers --model Movie --dataContext ApplicationDbContext -udl -scripts
 ```
 </b>
 
@@ -304,54 +202,12 @@ Added View : \Views\Movie\Index.cshtml
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 7) Install Entity Framework Globally:
+# 13) Migrating:
 
 <b>
 
 ```bash
-dotnet tool install --global dotnet-ef
-```
-</b>
-
-To make sure that the package has been successfull 
-installed globally, type thsi command:
-
-
-<b>
-
-```bash
-dotnet ef --help
-```
-</b>
-
-You should see now list of ef commands.
-
-
-
-
-
-
-# 8) Migrating:
-
-<b>
-
-```bash
-dotnet ef migrations add InitialCreate
+dotnet ef migrations add CreatedMovie
 ```
 </b>
 This will prepare the files for migrating the databse.
@@ -377,7 +233,7 @@ To see a list of migrations until now.
 The result should look like this:
 
 ```
-20210502002257_InitialCreate (Pending)
+20210502002257_CreatedMovie (Pending)
 ```
 
 
@@ -396,7 +252,7 @@ dotnet ef database update
 
 
 
-# 9) Finally: Testing the Application:
+# 14) Finally: Testing the Application:
 
 
 <b>

@@ -242,7 +242,7 @@ dotnet watch run
 
 
 
-# 12) Testing Auth:
+# 8) Testing Auth:
 
 
 <b>
