@@ -1,43 +1,47 @@
 # 6) Auth
 
-# Best Practice
-# 1) Create the application then Create Identity:
 
 
 
-
-# Forbidden
-# 2) Create the application with Identity:
+# 1) Create the application with Identity:
 
 
 <b>
 
 ```bash
-dotnet new webapp --output "WebApp1" --name "WebApp1" --auth Individual
+dotnet new webapp --output "src" --name "Application" --auth Individual
+dotnet new mvc --output "src" --name "Application" --auth Individual
+dotnet new webapi --output "src" --name "Application" --auth Individual
 ```
 </b>
 
-**Do not do that.  
-This will create a SQLite databse.  
-The SQLite Database can not have relationships inside ASP.NET.  
-You need to connect with a Microsoft database.**
 
 
-You need to do it like this:
 
-<b>
+This application will use SQLite.  
+If you want to use SQL Server, just add the **`-uld|--use-local-db`**
+
+
+
+
+
 ```bash
-dotnet new webapp --output "WebApp1" --name "WebApp1" --auth Individual --use-local-db
+dotnet new webapp --output "src" --name "Application" --auth Individual --use-local-db
+dotnet new mvc --output "src" --name "Application" --auth Individual --use-local-db
+dotnet new webapi --output "src" --name "Application" --auth Individual --use-local-db
 ```
-</b>
-This means that you will not be using SQLite.
+
+
+
+
+
 
 
 ---
 
 Change directory to the application directory.
 ```bash
-cd WebApp1
+cd src
 ```
 
 
@@ -58,13 +62,13 @@ dotnet dev-certs https --trust
 
 
 
-# 3) Code Generation (Scaffolding) Requirements :
-Before we can apply scaffolding, we need to install some packages:
-
+# 2) Install Requirements :
+Before moving on, we need to install requirements:
 <b>
 
 ```bash
 dotnet tool install -g dotnet-aspnet-codegenerator
+dotnet tool install --global dotnet-ef
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore
@@ -75,22 +79,64 @@ dotnet add package Microsoft.EntityFrameworkCore.Tools
 </b>
 
 
-Now we are ready to start code generation.
 
 
 
 
-# 4) Install Entity Framework Globally:
+
+
+
+
+
+
+
+# 3) Using Custom Identity Model:
+This is dangerous, because You will need to use the 
+model as a foreign key, and you will need to edit the user.  
+So, we create a model called ApplicationUSer, and this is the User.
+
+
 
 <b>
+Models/ApplicationUser.cs
 
-```bash
-dotnet tool install --global dotnet-ef
+```cs
+using System;
+using Microsoft.AspNetCore.Identity;
+using SocialApp.Models;
+using System.Collections.Generic;
+
+namespace SocialApp.Models
+{
+    public class ApplicationUser : IdentityUser
+    {
+        //public List<Post> Posts { get; set; }       
+    }
+}
 ```
+
+
 </b>
 
-To make sure that the package has been successfull 
-installed globally, type thsi command:
+
+
+
+
+
+```cs
+public class ApplicationDbContext : IdentityDbContext 
+//Wrong
+```
+<b>
+
+Make it use the ApplicationUser Model:
+
+```cs
+using SocialApp.Models;
+
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+//Right
+```
 
 
 
@@ -99,7 +145,45 @@ installed globally, type thsi command:
 
 
 
-# 4) Generating (Scaffolding) Identity pages :
+In **`Startup.cs`**:
+
+
+
+```cs
+using SocialApp.Models;
+
+public void ConfigureServices(IServiceCollection services)
+{
+            services.AddDefaultIdentity<ApplicationUser>(
+                options => 
+                    {
+                        options.Password.RequireDigit = false;
+                        options.Password.RequireLowercase = false;
+                        options.Password.RequireNonAlphanumeric = false;
+                        options.Password.RequireUppercase = false;
+                        options.Password.RequiredLength = 6;
+                        options.Password.RequiredUniqueChars = 0;
+                        options.SignIn.RequireConfirmedEmail = false;
+                        options.SignIn.RequireConfirmedAccount = false;
+                    })
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+}
+```
+
+</b>
+
+
+
+
+
+
+
+
+
+
+
+
+# 5) Generating (Scaffolding) Identity pages :
 
 
 <b>
@@ -120,23 +204,6 @@ Delete these these:
 
 
 
-# 5) Not Requiring email Confirmation :
-
-In **`Startup.cs`**
-
-<b>
-
-```cs
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddDefaultIdentity<IdentityUser>(options => {
-                options.SignIn.RequireConfirmedAccount = false;
-            }
-        )
-        .AddEntityFrameworkStores<ApplicationDbContext>();
-}
-```
-</b>
 
 
 
@@ -147,7 +214,8 @@ public void ConfigureServices(IServiceCollection services)
 
 
 
-# 8) Finally: Testing the Application:
+
+# 6) Finally: Testing the Application:
 
 
 <b>
@@ -161,7 +229,7 @@ dotnet watch run
 
 
 
-# 9) Testing Auth:
+# 7) Testing Auth:
 
 
 <b>
@@ -183,7 +251,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 
-namespace WebApp1.Pages
+namespace Application.Pages
 {
     [Authorize]
     public class TestingAuthModel : PageModel
