@@ -103,10 +103,10 @@ Models/ApplicationUser.cs
 ```cs
 using System;
 using Microsoft.AspNetCore.Identity;
-using SocialApp.Models;
+using Application.Models;
 using System.Collections.Generic;
 
-namespace SocialApp.Models
+namespace Application.Models
 {
     public class ApplicationUser : IdentityUser
     {
@@ -132,7 +132,7 @@ public class ApplicationDbContext : IdentityDbContext
 Make it use the ApplicationUser Model:
 
 ```cs
-using SocialApp.Models;
+using Application.Models;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 //Right
@@ -150,7 +150,7 @@ In **`Startup.cs`**:
 
 
 ```cs
-using SocialApp.Models;
+using Application.Models;
 
 public void ConfigureServices(IServiceCollection services)
 {
@@ -170,7 +170,23 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+
+
+**`Views/Shared/_LoginPartial.html`**
+
+```html
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+```
+
+
+
 </b>
+
+
+
+
 
 
 
