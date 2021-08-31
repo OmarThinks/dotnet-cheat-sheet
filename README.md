@@ -83,6 +83,16 @@ Creating API application using CLI
 
 
 
+<h1>
+<a href="relationships/README.md">
+7) Relationships</a>
+</h1>
+Establishing Relationships
+
+
+
+
+
 
 
 
