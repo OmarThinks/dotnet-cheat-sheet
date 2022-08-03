@@ -1,3 +1,41 @@
+# Installs:
+
+```
+
+```
+
+
+
+
+# Links:
+
+
+## Examples:
+
+- [Minimal API](https://github.com/MicrosoftDocs/minimal-api-work-with-databases)
+
+To Create:
+```bash
+dotnet new web -o PizzaStore
+```
+
+
+
+## How tos:
+
+- [Add CORS](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
+
+
+
+
+
+
+
+
+
+
+<!--
+
 # dotnet-cli-cheat-sheet
 
 
@@ -101,3 +139,4 @@ Establishing Relationships
 
 
 
+-->
