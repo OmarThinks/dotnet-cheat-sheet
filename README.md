@@ -1,8 +1,46 @@
-# Installs:
+# CLI Commands:
+
+
+
+## Get current .NET version:
 
 ```
+dotnet --list-sdks
+```
+
+
+---
 
 ```
+dotnet run
+dotnet watch run
+```
+
+
+---
+
+
+## Installs:
+
+
+```
+dotnet add package Swashbuckle.AspNetCore
+//dotnet add package Microsoft.EntityFrameworkCore.InMemory //Optional
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+
+
+
+## Database:
+
+
+```
+dotnet ef migrations add <Mod Name [InitialCreate]>
+dotnet ef database update
+```
+
 
 
 
