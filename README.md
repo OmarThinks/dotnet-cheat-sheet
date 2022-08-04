@@ -23,11 +23,13 @@ dotnet watch run
 ## Installs:
 
 
-```
-dotnet add package Swashbuckle.AspNetCore
-//dotnet add package Microsoft.EntityFrameworkCore.InMemory //Optional
-dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+```bash
 dotnet tool install --global dotnet-ef
+# dotnet tool install -g Microsoft.dotnet-httprepl # testing (Optional)
+
+dotnet add package Swashbuckle.AspNetCore
+#dotnet add package Microsoft.EntityFrameworkCore.InMemory # Optional
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
 dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
 
@@ -50,26 +52,16 @@ dotnet ef database update
 
 ## Examples:
 
-- [Minimal API](https://github.com/MicrosoftDocs/minimal-api-work-with-databases)
+- [Minimal API](https://github.com/MicrosoftDocs/minimal-api-work-with-databases) `dotnet new web -o PizzaStore`
+- [RazorPagesPizza](https://github.com/jongalloway/RazorPagesPizza) `dotnet new webapp -o RazorPagesPizza`
+- [ContosoPizza](https://github.com/david-iaggbs/ContosoPizza) `dotnet new webapi -o ContosoPizza`
 
-To Create:
-```bash
-dotnet new web -o PizzaStore
-```
-
-
-- [RazorPagesPizza] (https://github.com/jongalloway/RazorPagesPizza)
-
-To Create:
-```bash
-dotnet new webapi -o RazorPagesPizza
-```
 
 ## How tos:
 
 - [Add CORS](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
 - [Data Annotaions](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations)
-
+- [repl](https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl/?view=aspnetcore-6.0)
 
 
 
