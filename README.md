@@ -62,8 +62,7 @@ dotnet new web -o PizzaStore
 ## How tos:
 
 - [Add CORS](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
-
-
+- [Data Annotaions](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations)
 
 
 
