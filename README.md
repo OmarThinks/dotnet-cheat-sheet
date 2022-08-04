@@ -58,6 +58,12 @@ dotnet new web -o PizzaStore
 ```
 
 
+- [RazorPagesPizza] (https://github.com/jongalloway/RazorPagesPizza)
+
+To Create:
+```bash
+dotnet new webapi -o RazorPagesPizza
+```
 
 ## How tos:
 
