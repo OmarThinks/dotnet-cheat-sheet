@@ -25,6 +25,7 @@ dotnet watch run
 
 ```bash
 dotnet tool install --global dotnet-ef
+dotnet tool install -g dotnet-aspnet-codegenerator
 # dotnet tool install -g Microsoft.dotnet-httprepl # testing (Optional)
 
 dotnet add package Swashbuckle.AspNetCore
@@ -59,6 +60,7 @@ dotnet ef database update
 
 ## How tos:
 
+- [Add Model](pages/model.md)
 - [Add CORS](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
 - [Data Annotaions](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations)
 - [repl](https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl/?view=aspnetcore-6.0)
@@ -69,7 +71,6 @@ dotnet ef database update
 
 
 
-<!--
 
 # dotnet-cli-cheat-sheet
 
@@ -174,4 +175,3 @@ Establishing Relationships
 
 
 
--->
