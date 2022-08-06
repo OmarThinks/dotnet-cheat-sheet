@@ -51,5 +51,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("pizzas") ?? "Data Source=pizzas.db";
 builder.Services.AddDbContext<PizzaContext>(options => options.UseSqlite(connectionString));
+
+// OR
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ContosoPizzaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ContosoPizzaContext") ?? throw new InvalidOperationException("Connection string 'ContosoPizzaContext' not found.")));
 ```
 

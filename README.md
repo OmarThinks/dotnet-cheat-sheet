@@ -60,10 +60,14 @@ dotnet ef database update
 
 ## How tos:
 
+- [Azure CLI](pages/azure-cli.md)
 - [Add Model](pages/model.md)
 - [Add CORS](https://docs.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
 - [Data Annotaions](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations)
 - [repl](https://docs.microsoft.com/en-us/aspnet/core/web-api/http-repl/?view=aspnetcore-6.0)
+
+
+
 
 
 
