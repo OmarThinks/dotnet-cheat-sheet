@@ -41,7 +41,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 
 ```
 dotnet ef migrations add <Mod Name [InitialCreate]>
-dotnet ef database update
+dotnet ef database update --context PizzaContext
 ```
 
 
